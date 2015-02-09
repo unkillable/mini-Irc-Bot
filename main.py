@@ -1,6 +1,7 @@
 import socket, os, random
 if os.path.isfile('quotes.py'): pass
-else: f = open("quotes.py", "w+"); f.write("quotes_list = []"); f.close(); from quotes import quotes_list
+else: f = open("quotes.py", "w+"); f.write("quotes_list = []"); f.close();
+from quotes import quotes_list;
 host = "irc.tm"; port = 6667; nick = "Kaya"; chan = "#tm"; s = socket.socket(); s.connect((host, port)); connected = True; #config
 for packet in ["NICK {0}\r\n".format(nick), "USER {0} {0} {0} :{0}\r\n".format(nick), "JOIN %s" % chan + "\r\n"]: s.send(packet);
 while connected:
