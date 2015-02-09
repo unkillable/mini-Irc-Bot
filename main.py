@@ -16,4 +16,4 @@ while connected:
 		try: del quotes_list[int(data.split("~quotes del ")[1])]; f = open('quotes.py', 'w+'); f.write("quotes_list = {0}".format(quotes_list)); f.close(); s.send("PRIVMSG %s :Quote was deleted!\r\n" % chan); 
 		except Exception as e: s.send("PRIVMSG %s :Quote ID not found!\r\n" % chan);
 	if "~quotes rand" in data: s.send("PRIVMSG %s :%s\r\n" % (chan, random.choice(quotes_list)));
-	if data == "": s.close(); print "Disconnected from server"
+	if data == "": s.close(); print "Disconnected from server"; connected = False
