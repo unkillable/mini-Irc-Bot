@@ -1,0 +1,1 @@
+quotes_list = ["Arthur - I'm a homosexual feminist", 'Arthur - You people are dumber than I thought']
